@@ -1,17 +1,15 @@
 
- // Quiz App
-
  const btnStart = document.getElementById('quiz-start');
  const footer = document.querySelector('.footer');
  const nextButton = document.querySelector('#next');
- const quizWrapper = document.querySelector('.quiz__wrapper'); 
- const quizBox = document.querySelector('.quiz__box'); 
- const quizQuestion = document.querySelector('.quiz__heading');
- const quizList = document.querySelector('.quiz__options'); 
+ const quizWrapper = document.querySelector('.quiz_wrapper'); 
+ const quizBox = document.querySelector('.quiz_box'); 
+ const quizQuestion = document.querySelector('.quiz_heading');
+ const quizList = document.querySelector('.quiz_options'); 
  const quiz = document.querySelector('.quiz');
- const quizEnd = document.querySelector('#quiz__end');
- const score = document.querySelector('.quiz__score');
- let counter = document.querySelector('.quiz__counter');
+ const quizEnd = document.querySelector('#quiz_end');
+ const score = document.querySelector('.quiz_score');
+ let counter = document.querySelector('.quiz_counter');
  console.log(counter); 
  let points = 0,  
  currentQuestion = 1; 
@@ -57,7 +55,7 @@ const showQuestions = (question  => {
     question.answers.forEach(answer => {
         const button = document.createElement('button'); 
         button.innerHTML = answer.option; 
-        button.classList.add('quiz__options-list');
+        button.classList.add('quiz_options-list');
         
         if (answer.correct) {
             button.dataset.correct = answer.correct;
@@ -123,13 +121,13 @@ const showResults = () => {
     footer.classList.add('footer-fix');
     document.body.classList.add('body-flex');
     const markup = `
-    <div class="quiz__end quiz-margin">
-        <h1 class="end__heading-1">Game Over!</h1>
-        <h2 class="end__heading-2">
+    <div class="quiz_end quiz-margin">
+        <h1 class="end_heading-1">Game Over!</h1>
+        <h2 class="end_heading-2">
         Your score is: 
         </h2>
         <p class="score">${points}</p>
-        <button id="btn__reload" class="btn__reload next">
+        <button id="btn_reload" class="btn_reload next">
             Return to homepage
         </button>
     </div>
@@ -137,29 +135,26 @@ const showResults = () => {
 
     quiz.insertAdjacentHTML('afterbegin', markup);
     
-    document.getElementById('btn__reload').addEventListener('click', () => {
+    document.getElementById('btn_reload').addEventListener('click', () => {
         window.location.reload(); 
     }); 
    
 }
 
- /*****************************************************************
-  * Questions
-  */
+ // Questions, answers and options
+  
 
  const questions = [
     
     {
-        question: "Inside which HTML element do we put the JavaScript?",
+        question: "Web pages are written using?",
         answers: [
-            {option: '&lt;javascript&gt;', correct: false},
-            {option: '&lt;link&gt;', correct:false},
-            {option: '&lt;style&gt;', correct: false},
-            {option: '&lt;script&gt;',  correct: true}
+            {option: 'FTP', correct: false},
+            {option: 'HTTP', correct:false},
+            {option: 'URL', correct: false},
+            {option: 'HTML',  correct: true}
         ]  
     }, 
-    
-    
     
     {   
         question: `What is the correct syntax for referring to an external script called "app.js"?`,
@@ -170,12 +165,10 @@ const showResults = () => {
             {option: '&lt;script url="app.js"&gt;', correct: false} 
         ]
         
-        
-        
     },
     
     { 
-        "question":"How do you write 'Hello World' in an alert box?",
+        question:"How do you write 'Hello World' in an alert box?",
 
         answers: [  
             {option: "alert('Hello World');", correct: true},
@@ -189,42 +182,37 @@ const showResults = () => {
      
     
     { 
-        question: "How do you create a function in JavaScript?", 
+        question: "What does 'ALU' stands for?", 
 
         answers: [  
-            {option: "function = myFunction() {}", correct: false},
-            {option: "function myFunction() {}", correct: true},
-            {option: "function: myFunction() {}", correct: false},
-            {option: "myFunction() function {}",  correct: false}
+            {option: "Arithmetic Long Unit", correct: false},
+            {option: "Arithmetic and Logical Units", correct: true},
+            {option: "All Longer Units", correct: false},
+            {option: "Around Logical Units",  correct: false}
         ]  
 
     },
     
     { 
-        question: "How would you call a function called myFunction in javascript?",
+        question: "Which of the following is not a database management software?",
 
         answers: [  
-            {option: "call myFunction()", correct: false},
-            {option: "myFunction", correct: false},
-            {option: "invoke myFunction", correct: false},
-            {option: "myFunction()",  correct: true}
+            {option: "MySQL", correct: false},
+            {option: "Oracle", correct: false},
+            {option: "Sybase", correct: false},
+            {option: "COBOL",  correct: true}
         ]  
     }
 
 ]
 
-
-
-/*************************************
- * EVENT LISTENERS
- */
+ 
 
 btnStart.addEventListener('click', startQuiz); 
 nextButton.addEventListener('click', () => {
     currentIndex++;
     nextQuesiton();  
 });
-
 
 
 const date = new Date().getFullYear();

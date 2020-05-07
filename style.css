@@ -126,8 +126,8 @@ quiz questions
 .quiz_options {
     width: 85%; 
     padding: .5rem; 
-    margin: 1.5rem auto; 
-
+    margin: 1.5rem auto;
+    border: 2px solid;
 }
 
 .quiz_options:last-child {

@@ -73,25 +73,18 @@ h1 {
     background: var(--color-tertiary); 
     box-shadow: 0 0 1.5rem 2px;   
     border: 3px solid var(--color-primary);
-    transition: all .2s;  
-    
-
+    transition: all .2s; 
 }
 
 .quiz-start:hover, 
 .quiz-start:focus {
     background: var(--color-primary);
-    /*box-shadow: .5rem 1rem 2rem var(--color-tertiary); */
     border-bottom: 3px solid var(--color-secondary);
     border-top: 3px solid var(--color-tertiary); 
     border-left: 3px solid var(--color-text);
     border-right: 3px solid var(--color-text);  
  
 }
-
-/***********************************
-quiz questions
-*/
 
 .quiz_box {
     width: 100%;
@@ -148,11 +141,6 @@ quiz questions
     transition: all .2s;  
      
 }
-/* .quiz__options-list:hover {
-    background: var(--color-primary);
-    border: 2px solid var(--color-tertiary);  
-    color: var(--color-text); 
-} */
 
 .next {
     display: block;
@@ -254,13 +242,6 @@ footer a:hover {
     display: none; 
 }
 
-
-
-
-
-/***************************
-* MEDIA QUERY 
-*/
 
 @media only screen and (max-width: 31.25em) {
     html {
